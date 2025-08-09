@@ -1,0 +1,123 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pydantic-type-chile-rut"
+version = "0.1.0"
+description = "Pydantic custom type for Chilean RUT validation and formatting"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Felipe Lolas", email = "flolas@alumnos.uai.cl" },
+]
+keywords = ["pydantic", "chile", "rut", "validation", "type"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pre-commit>=3.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "python-semantic-release>=8.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pydantic-type-chile-rut"
+Repository = "https://github.com/yourusername/pydantic-type-chile-rut"
+Issues = "https://github.com/yourusername/pydantic-type-chile-rut/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pydantic_type_chile_rut"]
+
+[tool.hatch.version]
+path = "src/pydantic_type_chile_rut/__init__.py"
+
+[tool.ruff]
+target-version = "py38"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by formatter
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+]
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+version_variables = ["src/pydantic_type_chile_rut/__init__.py:__version__"]
+build_command = "uv build"
+dist_glob_patterns = ["dist/*"]
+upload_to_vcs_release = true
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+check_untyped_defs = false
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+check_untyped_defs = false
+
+[dependency-groups]
+dev = [
+    "mypy>=1.14.1",
+]
