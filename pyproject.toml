@@ -101,8 +101,7 @@ exclude_lines = [
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
 version_variables = ["src/pydantic_type_chile_rut/__init__.py:__version__"]
-build_command = "python -m build"
-dist_glob_patterns = ["dist/*"]
+build_command = ""
 upload_to_vcs_release = true
 
 [tool.mypy]

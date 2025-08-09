@@ -64,12 +64,19 @@ jobs:
       - uses: astral-sh/setup-uv@v3
         with:
           version: "latest"
-      - name: Install semantic release
+      - name: Install semantic release and build tools
         run: |
           python -m pip install --upgrade pip
-          pip install python-semantic-release build
+          pip install python-semantic-release build hatchling
       - name: Semantic Release
-        uses: python-semantic-release/python-semantic-release@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          verbosity: 2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          semantic-release version
+      - name: Build package after version update
+        if: env.NEW_VERSION != ''
+        run: |
+          uv build
+      - name: Upload to PyPI
+        if: env.NEW_VERSION != ''
+        uses: pypa/gh-action-pypi-publish@release/v1
