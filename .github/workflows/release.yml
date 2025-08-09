@@ -18,13 +18,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - uses: astral-sh/setup-uv@v3
-        with:
-          version: "latest"
       - name: Install dependencies
-        run: uv sync --dev
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
       - name: Run tests
-        run: uv run pytest tests/
+        run: pytest tests/
 
   release:
     needs: test
@@ -38,8 +37,6 @@ jobs:
       - uses: astral-sh/setup-uv@v3
         with:
           version: "latest"
-      - name: Install dependencies
-        run: uv sync --dev
       - name: Build package
         run: uv build
       - name: Create GitHub Release
@@ -64,11 +61,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - uses: astral-sh/setup-uv@v3
-        with:
-          version: "latest"
-      - name: Install dependencies
-        run: uv sync --dev
+      - name: Install semantic release
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-semantic-release
       - name: Semantic Release
         uses: python-semantic-release/python-semantic-release@master
         with:
