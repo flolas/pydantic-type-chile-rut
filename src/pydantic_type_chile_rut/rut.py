@@ -1,7 +1,7 @@
 """Chilean RUT validation and formatting for Pydantic."""
 
 import re
-from typing import Any
+from typing import Any, Tuple
 
 from pydantic import GetCoreSchemaHandler
 from pydantic_core import core_schema
@@ -24,7 +24,7 @@ def _compute_dv(body: str) -> str:
     return str(mod)
 
 
-def _parse_and_validate_rut(value: Any) -> tuple[str, str]:
+def _parse_and_validate_rut(value: Any) -> Tuple[str, str]:
     """
     Normalize and validate a RUT-like input.
     Accepts with/without dots and hyphen, lowercase/uppercase 'k'.
