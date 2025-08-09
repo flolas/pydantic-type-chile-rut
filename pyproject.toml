@@ -38,6 +38,7 @@ dev = [
     "ruff>=0.1.0",
     "mypy>=1.0.0",
     "python-semantic-release>=8.0.0",
+    "build>=0.10.0",
 ]
 
 [project.urls]
@@ -100,7 +101,7 @@ exclude_lines = [
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
 version_variables = ["src/pydantic_type_chile_rut/__init__.py:__version__"]
-build_command = "uv build"
+build_command = "python -m build"
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
 
