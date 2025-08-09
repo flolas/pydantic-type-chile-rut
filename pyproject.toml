@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pydantic-type-chile-rut"
-version = "1.0.0"
+version = "1.0.1"
 description = "Pydantic custom type for Chilean RUT validation and formatting"
 readme = "README.md"
 license = "MIT"
