@@ -1,7 +1,7 @@
 # pydantic-type-chile-rut
 
-[![CI](https://github.com/yourusername/pydantic-type-chile-rut/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/pydantic-type-chile-rut/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/yourusername/pydantic-type-chile-rut/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/pydantic-type-chile-rut)
+[![CI](https://github.com/flolas/pydantic-type-chile-rut/actions/workflows/ci.yml/badge.svg)](https://github.com/flolas/pydantic-type-chile-rut/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/flolas/pydantic-type-chile-rut/branch/main/graph/badge.svg)](https://codecov.io/gh/flolas/pydantic-type-chile-rut)
 [![PyPI version](https://badge.fury.io/py/pydantic-type-chile-rut.svg)](https://badge.fury.io/py/pydantic-type-chile-rut)
 [![Python versions](https://img.shields.io/pypi/pyversions/pydantic-type-chile-rut.svg)](https://pypi.org/project/pydantic-type-chile-rut/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -277,7 +277,7 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management and
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pydantic-type-chile-rut.git
+git clone https://github.com/flolas/pydantic-type-chile-rut.git
 cd pydantic-type-chile-rut
 
 # Install dependencies
@@ -351,7 +351,7 @@ See [CHANGELOG.md](CHANGELOG.md) for a history of changes.
 
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/yourusername/pydantic-type-chile-rut/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/flolas/pydantic-type-chile-rut/issues) on GitHub.
 
 ## Related Projects
 

@@ -120,5 +120,6 @@ check_untyped_defs = false
 
 [dependency-groups]
 dev = [
+    "build>=1.2.2.post1",
     "mypy>=1.14.1",
 ]
