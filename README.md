@@ -1,0 +1,1 @@
+# pydantic-type-chile-rut
