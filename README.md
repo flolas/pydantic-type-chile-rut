@@ -1,8 +1,8 @@
 # pydantic-type-chile-rut
 
 [![CI](https://github.com/flolas/pydantic-type-chile-rut/actions/workflows/ci.yml/badge.svg)](https://github.com/flolas/pydantic-type-chile-rut/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/flolas/pydantic-type-chile-rut/branch/main/graph/badge.svg)](https://codecov.io/gh/flolas/pydantic-type-chile-rut)
 [![PyPI version](https://badge.fury.io/py/pydantic-type-chile-rut.svg)](https://badge.fury.io/py/pydantic-type-chile-rut)
+[![PyPI Downloads](https://static.pepy.tech/badge/pydantic-type-chile-rut)](https://pepy.tech/projects/pydantic-type-chile-rut)
 [![Python versions](https://img.shields.io/pypi/pyversions/pydantic-type-chile-rut.svg)](https://pypi.org/project/pydantic-type-chile-rut/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
