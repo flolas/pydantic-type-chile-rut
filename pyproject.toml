@@ -42,9 +42,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/pydantic-type-chile-rut"
-Repository = "https://github.com/yourusername/pydantic-type-chile-rut"
-Issues = "https://github.com/yourusername/pydantic-type-chile-rut/issues"
+Homepage = "https://github.com/flolas/pydantic-type-chile-rut"
+Repository = "https://github.com/flolas/pydantic-type-chile-rut"
+Issues = "https://github.com/flolas/pydantic-type-chile-rut/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pydantic_type_chile_rut"]
