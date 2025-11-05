@@ -359,6 +359,24 @@ If you encounter any issues or have questions, please [open an issue](https://gi
 - [python-rut](https://github.com/YerkoPalma/python-rut) - Another RUT validation library
 - [django-rut](https://github.com/YerkoPalma/django-rut) - RUT field for Django
 
+## LLM Integration Examples
+
+Although the library keeps zero runtime dependencies on LLM tooling, it can be
+used with frameworks that automatically retry when validation fails. The
+`examples/` directory contains ready-to-run Python snippets that demonstrate how
+an invalid RUT triggers another LLM attempt until a valid response is parsed.
+
+- [`examples/instructor_usage.py`](examples/instructor_usage.py) shows how to
+  wire the type into [Instructor](https://python.useinstructor.com/). When the
+  model produces an invalid RUT, Instructor catches the `ValidationError` raised
+  by `RutNumber` and transparently asks the LLM to try again.
+- [`examples/pydantic_ai_usage.py`](examples/pydantic_ai_usage.py) illustrates
+  the same idea with [PydanticAI](https://ai.pydantic.dev/), relying on its
+  built-in retry loop driven by Pydantic validation errors.
+
+Both examples keep the repository LLM-agnostic: they are opt-in utilities that
+you can copy into your own project when integrating with an LLM backend.
+
 ## Acknowledgments
 
 - Thanks to the Pydantic team for creating an excellent validation library
