@@ -373,6 +373,10 @@ an invalid RUT triggers another LLM attempt until a valid response is parsed.
 - [`examples/pydantic_ai_usage.py`](examples/pydantic_ai_usage.py) illustrates
   the same idea with [PydanticAI](https://ai.pydantic.dev/), relying on its
   built-in retry loop driven by Pydantic validation errors.
+- [`examples/langchain_structured_output.py`](examples/langchain_structured_output.py)
+  demonstrates LangChain's
+  [structured output](https://python.langchain.com/docs/guides/structured_output/)
+  pipeline, where failed schema parsing triggers fresh LLM attempts.
 
 Both examples keep the repository LLM-agnostic: they are opt-in utilities that
 you can copy into your own project when integrating with an LLM backend.
